@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import VillageIntro from "../components/VillageIntro";
+import zoeHeadshot from "../assets/Zoes Headshot.png";
 
 function Home() {
   return (
@@ -70,27 +71,49 @@ function Home() {
           </button>
         </section>
 
-        {/* ABOUT SECTION */}
-        <section
-          style={{
-            padding: "100px 40px",
-            textAlign: "center",
-          }}
-        >
-          <h2>Meet Your Doula</h2>
 
-          <p
-            style={{
-              maxWidth: "700px",
-              margin: "20px auto",
-              lineHeight: "1.8",
-            }}
-          >
-            Hi, I'm Zoë. My goal is to help families feel supported,
-            informed, and empowered throughout pregnancy, birth,
-            and postpartum recovery.
-          </p>
-        </section>
+{/* ABOUT SECTION */}
+
+<img
+  src={zoeHeadshot}
+  alt="Zoë's Headshot"
+  style={{
+    width: "320px",
+    height: "320px",
+    objectFit: "cover",
+    borderRadius: "50%",
+    boxShadow: "0 20px 50px rgba(60, 76, 61, 0.18)",
+  }}
+/>
+<div
+  style={{
+    maxWidth: "600px",
+  }}
+>
+  <h2>Meet Your Doula</h2>
+
+  <p>
+    Hi, I'm Zoë.
+  </p>
+
+  <p>
+    My goal is to help families feel supported, informed, and empowered throughout pregnancy, birth, and postpartum recovery.
+  </p>
+</div>
+<button
+  style={{
+    marginTop: "20px",
+    padding: "15px 25px",
+    background: "#78937A",
+    color: "white",
+    border: "none",
+    borderRadius: "10px",
+    cursor: "pointer",
+  }}
+>
+  Schedule a Free Consultation
+</button>
+
 
         {/* SERVICES */}
         <section

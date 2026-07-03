@@ -17,101 +17,63 @@
   animation: morningFadeIn 2s ease forwards;
 }
 
-/* Sun animation area */
-.sun-animation {
-  position: absolute;
-  left: 50%;
-  top: 34%;
-  width: 720px;
-  height: 300px;
-  transform: translateX(-50%);
-  animation: sunGroupExit 6.2s ease forwards;
-}
-
-/* Rising half sun */
-.rising-sun {
-  position: absolute;
-  left: 50%;
-  bottom: 78px;
-  width: 160px;
-  height: 80px;
-  transform: translateX(-50%) translateY(105px);
-  background: radial-gradient(circle at center, #f7c978, #e5a348);
-  border-radius: 160px 160px 0 0;
-  box-shadow:
-    0 0 35px rgba(237, 174, 82, 0.45),
-    0 0 90px rgba(237, 174, 82, 0.22);
-  opacity: 0;
-  animation:
-  sunRise 3.4s ease forwards,
-  sunFloat 5s ease-in-out infinite;
-
-}
-
-/* Rays behind the sun */
-.sun-rays {
-  position: absolute;
-  left: 50%;
-  bottom: 25px;
-  width: 420px;
-  height: 420px;
-  transform: translateX(-50%) scale(0.75);
-  border-radius: 50%;
-  background: repeating-conic-gradient(
-    from 0deg,
-    rgba(214, 156, 73, 0.8) 0deg 2deg,
-    transparent 2deg 15deg
-  );
-  opacity: 0;
-  animation: raysReveal 3.7s ease forwards;
-}
-
-/* Wavy horizon line */
-.horizon-line {
-  position: absolute;
-  left: 50%;
-  bottom: 60px;
-  width: 700px;
-  height: 80px;
-  transform: translateX(-50%);
-  opacity: 0;
-  animation: waveReveal 3s ease forwards;
-}
-
-.horizon-line path {
-  fill: none;
-  stroke: rgba(206, 151, 72, 0.9);
-  stroke-width: 5;
-
-  stroke-dasharray: 1400;
-  stroke-dashoffset: 1400;
-
-  animation: drawWave 2.8s ease forwards;
-}
-
 /* Full logo reveal */
 .logo-wrapper {
   position: absolute;
   inset: 0;
+
   display: flex;
   justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(40px) scale(0.96);
+
+  align-items: flex-end;
+
+  padding-bottom: 180px;
+
+  z-index: 2;
+
   animation: logoRevealAndMove 9s ease forwards;
 }
 
 
-.logo-wrapper img {
-  width: min(78vw, 780px);
-  height: auto;
-
-  filter:
-    drop-shadow(0 18px 35px rgba(80, 55, 35, 0.13))
-    drop-shadow(0 0 40px rgba(255, 214, 120, 0.25));
+.logo-wrapper {
+  z-index: 2;
 }
 
 
+.valley-scene {
+  z-index: 3;
+}
+
+.logo-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 224, 150, 0.45) 0%,
+    rgba(255, 224, 150, 0.15) 40%,
+    transparent 75%
+  );
+
+  z-index: -1;
+}
+
+.logo-wrapper img {
+  width: min(55vw, 550px);
+  height: auto;
+
+  opacity: 1;
+
+  filter:
+    drop-shadow(0 20px 40px rgba(60, 76, 61, 0.35))
+    drop-shadow(0 0 70px rgba(255, 220, 150, 0.55));
+}
 /* soft fade at end */
 .intro-soft-fade {
   position: absolute;
@@ -134,103 +96,66 @@
   }
 }
 
-@keyframes sunRise {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(105px);
-  }
 
-  25% {
-    opacity: 1;
-  }
+@keyframes logoRevealAndMove {
 
-  100% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
+
+
+0% {
+  opacity: 1;
+  filter: blur(8px);
+  transform: translateY(350px) scale(0.25);
 }
 
-@keyframes raysReveal {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) scale(0.65) rotate(-5deg);
-  }
 
-  40% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0.72;
-    transform: translateX(-50%) scale(1) rotate(0deg);
-  }
-}
-
-@keyframes horizonDraw {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
 
   35% {
     opacity: 1;
+    filter: blur(8px);
   }
 
-  100% {
-    width: 660px;
-    opacity: 1;
-  }
-}
-
-@keyframes sunGroupExit {
-  0% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(35px) scale(1);
-  }
-
-  62% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-35px) scale(0.94);
-  }
-}
-
-@keyframes logoRevealAndMove {
-  0% {
-    opacity: 0;
-    filter: blur(10px);
-    transform: translateY(45px) scale(0.96);
-  }
-
-  45% {
-    opacity: 0;
-    filter: blur(10px);
-  }
-
-  60% {
+  80% {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0) scale(1);
   }
 
- 
-85% {
+  95% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+
+100% {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  filter: blur(0);
+  transform: translateY(-320px) scale(0.32);
 }
 
+}
 
+@keyframes valleyReveal {
+  0% {
+    opacity: 0;
+    filter: blur(12px) brightness(0.7);
+    transform: translateY(0) scale(1.05);
+  }
 
-    100% {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(-320px) scale(0.32);
-    }
+  25% {
+    opacity: 0.8;
+    filter: blur(0) brightness(1);
+    transform: translateY(0) scale(1);
+  }
 
+  50% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0.15;
+    transform: translateY(200px);
+  }
 }
 
 @keyframes finalSoftFade {
@@ -264,25 +189,7 @@
   }
 }
 
-@keyframes drawWave {
-  from {
-    stroke-dashoffset: 1400;
-  }
 
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes waveReveal {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
 
 @keyframes showNavbar {
   from {
@@ -291,20 +198,6 @@
 
   to {
     opacity: 1;
-  }
-}
-
-@keyframes sunFloat {
-  0% {
-    transform: translateX(-50%) translateY(0);
-  }
-
-  50% {
-    transform: translateX(-50%) translateY(-5px);
-  }
-
-  100% {
-    transform: translateX(-50%) translateY(0);
   }
 }
 
@@ -320,50 +213,27 @@
   }
 }
 
+
+.valley-scene {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 3;
+
+  display: flex;
+  justify-content: center;
+
+    animation: valleyReveal 9s ease forwards;
+}
+
+
 /* Mobile version */
 @media (max-width: 768px) {
-  .sun-animation {
-    width: 380px;
-    top: 32%;
-  }
-
-  .rising-sun {
-    width: 110px;
-    height: 55px;
-    bottom: 78px;
-  }
-
-  .sun-rays {
-    width: 280px;
-    height: 280px;
-    bottom: 30px;
-  }
-
-  .horizon-line {
-    bottom: 70px;
-  }
 
   .logo-wrapper img {
     width: 92vw;
   }
-
-  @keyframes horizonDraw {
-    0% {
-      width: 0;
-      opacity: 0;
-    }
-
-    35% {
-      opacity: 1;
-    }
-
-    100% {
-      width: 350px;
-      opacity: 1;
-    }
-  }
-  
-
-
 
 }
