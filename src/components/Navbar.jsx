@@ -1,41 +1,25 @@
-import logo from "../assets/zoes-village-logo.png";
-
 function Navbar() {
   return (
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "15px 40px",
-        backgroundColor: "white",
-        borderBottom: "1px solid #ddd",
-        position: "sticky",
-        top: 0,
-        zIndex: 1000,
-      }}
-    >
-      <img
-        src={logo}
-        alt="Zoë's Village"
-        style={{
-          height: "60px",
-          width: "auto",
-        }}
-      />
+    <header className="navbar">
+      <a className="nav-logo" href="#">
+        <span className="nav-logo-mark">ZV</span>
+        <span>
+          <strong>Zoë's Village</strong>
+          <small>Birth & Postpartum Doula</small>
+        </span>
+      </a>
 
-      <div
-        style={{
-          display: "flex",
-          gap: "30px",
-        }}
-      >
-        <span>Home</span>
-        <span>About</span>
-        <span>Services</span>
-        <span>Contact</span>
-      </div>
-    </nav>
+      <nav className="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#journey">Your Journey</a>
+        <a href="#journal">Journal</a>
+      </nav>
+
+      <a className="nav-cta" href="#contact">
+        Free Consultation
+      </a>
+    </header>
   );
 }
 

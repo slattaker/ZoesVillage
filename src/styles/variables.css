@@ -1,0 +1,24 @@
+:root {
+  --cream: #f7f1e9;
+  --warm-cream: #f3e5d2;
+  --sand: #efd8bc;
+  --gold: #e4b15a;
+  --sage: #8a9774;
+  --deep-sage: #667458;
+  --dusty-blue: #a8b7c8;
+  --brown: #6b5848;
+  --dark-brown: #3f3229;
+  --white: #ffffff;
+
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --shadow-soft: 0 24px 70px rgba(63, 50, 41, 0.12);
+  --shadow-card: 0 18px 50px rgba(63, 50, 41, 0.1);
+
+  --radius-xl: 36px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+
+  --container: 1180px;
+}

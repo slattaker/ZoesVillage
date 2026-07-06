@@ -1,208 +1,28 @@
-import Navbar from "../components/Navbar";
-import VillageIntro from "../components/VillageIntro";
-import zoeHeadshot from "../assets/Zoes Headshot.png";
+import Navbar from "../components/Navbar.jsx";
+import Hero from "../components/Hero.jsx";
+import AboutPreview from "../components/AboutPreview.jsx";
+import ServicesPreview from "../components/ServicesPreview.jsx";
+import VillageLandscape from "../components/VillageLandscape.jsx";
+import WhyChoose from "../components/WhyChoose.jsx";
+import TestimonialArea from "../components/TestimonialArea.jsx";
+import JourneyTimeline from "../components/JourneyTimeline.jsx";
+import VillagePromise from "../components/VillagePromise.jsx";
+import Footer from "../components/Footer.jsx";
 
 function Home() {
   return (
     <>
-      <VillageIntro />
+      <VillageLandscape />
       <Navbar />
-
-
-<main
-  style={{
-    animation: "fadeWebsite 2s ease",
-  }}
->
-
-
-        {/* HERO SECTION */}
-        <section
-          style={{
-            minHeight: "90vh",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            padding: "40px",
-            backgroundColor: "#f8efe4",
-          }}
-        >
-          <h1
-            style={{
-              fontSize: "4rem",
-              color: "#3c4c3d",
-            }}
-          >
-            Zoë's Village
-          </h1>
-
-          <h2
-            style={{
-              color: "#7c8e73",
-            }}
-          >
-            Compassionate Birth & Postpartum Care
-          </h2>
-
-          <p
-            style={{
-              maxWidth: "700px",
-              fontSize: "1.2rem",
-            }}
-          >
-            You don't have to do it alone. Professional support
-            through pregnancy, birth, and the postpartum journey.
-          </p>
-
-          <button
-            style={{
-              marginTop: "25px",
-              padding: "15px 30px",
-              border: "none",
-              borderRadius: "10px",
-              background: "#78937A",
-              color: "white",
-              cursor: "pointer",
-            }}
-          >
-            Schedule a Consultation
-          </button>
-        </section>
-
-
-{/* ABOUT SECTION */}
-
-<img
-  src={zoeHeadshot}
-  alt="Zoë's Headshot"
-  style={{
-    width: "320px",
-    height: "320px",
-    objectFit: "cover",
-    borderRadius: "50%",
-    boxShadow: "0 20px 50px rgba(60, 76, 61, 0.18)",
-  }}
-/>
-<div
-  style={{
-    maxWidth: "600px",
-  }}
->
-  <h2>Meet Your Doula</h2>
-
-  <p>
-    Hi, I'm Zoë.
-  </p>
-
-  <p>
-    My goal is to help families feel supported, informed, and empowered throughout pregnancy, birth, and postpartum recovery.
-  </p>
-</div>
-<button
-  style={{
-    marginTop: "20px",
-    padding: "15px 25px",
-    background: "#78937A",
-    color: "white",
-    border: "none",
-    borderRadius: "10px",
-    cursor: "pointer",
-  }}
->
-  Schedule a Free Consultation
-</button>
-
-
-        {/* SERVICES */}
-        <section
-          style={{
-            background: "#f8efe4",
-            padding: "100px 40px",
-          }}
-        >
-          <h2
-            style={{
-              textAlign: "center",
-            }}
-          >
-            Services
-          </h2>
-
-          <div
-            style={{
-              display: "flex",
-              gap: "20px",
-              justifyContent: "center",
-              flexWrap: "wrap",
-              marginTop: "40px",
-            }}
-          >
-            <div
-              style={{
-                background: "white",
-                padding: "30px",
-                borderRadius: "12px",
-                width: "250px",
-              }}
-            >
-              <h3>Birth Support</h3>
-              <p>Compassionate guidance through labor and delivery.</p>
-            </div>
-
-            <div
-              style={{
-                background: "white",
-                padding: "30px",
-                borderRadius: "12px",
-                width: "250px",
-              }}
-            >
-              <h3>Postpartum Support</h3>
-              <p>Helping families transition confidently after birth.</p>
-            </div>
-
-            <div
-              style={{
-                background: "white",
-                padding: "30px",
-                borderRadius: "12px",
-                width: "250px",
-              }}
-            >
-              <h3>Virtual Guidance</h3>
-              <p>Remote support whenever you need it most.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* CONTACT */}
-        <section
-          style={{
-            padding: "100px 40px",
-            textAlign: "center",
-          }}
-        >
-          <h2>Contact</h2>
-
-          <p>Email: hello@zoesvillage.com</p>
-
-          <p>Phone: (Your Number Here)</p>
-
-          <button
-            style={{
-              marginTop: "20px",
-              padding: "15px 30px",
-              background: "#78937A",
-              color: "white",
-              border: "none",
-              borderRadius: "10px",
-            }}
-          >
-            Schedule Your Consultation
-          </button>
-        </section>
+      <main>
+        <Hero />
+        <AboutPreview />
+        <ServicesPreview />
+        <WhyChoose />
+        <JourneyTimeline />
+        <TestimonialArea />
+        <VillagePromise />
+        <Footer />
       </main>
     </>
   );

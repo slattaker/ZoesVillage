@@ -1,0 +1,155 @@
+.about-preview {
+  position: relative;
+}
+
+.about-preview::before {
+  content: "";
+  position: absolute;
+  inset: 12% auto auto -160px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: rgba(168, 183, 200, 0.22);
+  filter: blur(12px);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 78px;
+}
+
+.about-image-wrap {
+  position: relative;
+  min-height: 560px;
+  display: grid;
+  place-items: center;
+}
+
+.about-orbit {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  border: 1px solid rgba(107, 88, 72, 0.16);
+}
+
+.about-orbit::before,
+.about-orbit::after {
+  content: "✿";
+  position: absolute;
+  color: var(--gold);
+  font-size: 2rem;
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.about-orbit::before {
+  top: 20px;
+  right: 38px;
+}
+
+.about-orbit::after {
+  left: 26px;
+  bottom: 52px;
+  color: var(--sage);
+  animation-delay: 1.2s;
+}
+
+.about-image {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 420px);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 46% 46% 28px 28px;
+  box-shadow: 0 30px 90px rgba(63, 50, 41, 0.18);
+  border: 12px solid rgba(255, 250, 244, 0.82);
+}
+
+.about-note {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 72px;
+  width: 245px;
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255, 250, 244, 0.82);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(107, 88, 72, 0.1);
+}
+
+.about-note span {
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+
+.about-note p {
+  margin: 8px 0 0;
+  line-height: 1.55;
+  font-weight: 600;
+  color: var(--dark-brown);
+}
+
+.about-content .section-copy {
+  margin-bottom: 20px;
+}
+
+.about-signature {
+  margin: 30px 0 28px;
+}
+
+.about-signature span {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 3.1rem;
+  color: var(--dark-brown);
+  line-height: 1;
+}
+
+.about-signature p {
+  margin: 6px 0 0;
+  color: rgba(107, 88, 72, 0.7);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .about-image-wrap {
+    min-height: 500px;
+  }
+
+  .about-note {
+    right: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-image-wrap {
+    min-height: auto;
+    padding-bottom: 110px;
+  }
+
+  .about-orbit {
+    width: 300px;
+    height: 300px;
+  }
+
+  .about-image {
+    width: 300px;
+    border-width: 8px;
+  }
+
+  .about-note {
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    width: auto;
+  }
+}

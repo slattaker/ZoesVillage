@@ -1,0 +1,180 @@
+.village-promise {
+  position: relative;
+  padding-bottom: 70px;
+}
+
+.promise-wrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 720px;
+  border-radius: 54px;
+  background:
+    linear-gradient(135deg, rgba(63, 50, 41, 0.82), rgba(102, 116, 88, 0.74)),
+    radial-gradient(circle at 78% 20%, rgba(228, 177, 90, 0.34), transparent 30%);
+  box-shadow: 0 34px 110px rgba(63, 50, 41, 0.24);
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 30px;
+  padding: 70px;
+}
+
+.promise-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.12), transparent 26%),
+    linear-gradient(180deg, rgba(255, 250, 244, 0.08), transparent 44%);
+  pointer-events: none;
+}
+
+.promise-content {
+  position: relative;
+  z-index: 3;
+  color: white;
+}
+
+.promise-content .eyebrow {
+  color: rgba(255, 231, 168, 0.92);
+}
+
+.promise-content h2 {
+  margin: 16px 0 22px;
+  font-family: var(--font-heading);
+  font-size: clamp(3.6rem, 7vw, 7.8rem);
+  line-height: 0.86;
+  letter-spacing: -0.065em;
+  color: #fffaf4;
+}
+
+.promise-content > p {
+  max-width: 680px;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: rgba(255, 250, 244, 0.84);
+}
+
+.promise-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.promise-actions .secondary-btn {
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.promise-small {
+  margin-top: 28px;
+  font-size: 0.92rem;
+  color: rgba(255, 250, 244, 0.68) !important;
+}
+
+.promise-art {
+  position: relative;
+  z-index: 2;
+  height: 520px;
+  border-radius: 40px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #f7d896 0%, #c99f63 46%, #6f7f63 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.promise-sun {
+  position: absolute;
+  top: 58px;
+  right: 70px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff2b8, var(--gold));
+  box-shadow: 0 0 90px rgba(255, 231, 168, 0.7);
+  animation: glowPulse 7s ease-in-out infinite;
+}
+
+.promise-hill {
+  position: absolute;
+  left: -12%;
+  right: -12%;
+  bottom: -90px;
+  height: 240px;
+  border-radius: 50% 50% 0 0;
+}
+
+.promise-hill-one {
+  background: #8a9774;
+  transform: rotate(-4deg);
+}
+
+.promise-hill-two {
+  bottom: -145px;
+  background: #526049;
+  transform: rotate(5deg);
+}
+
+.promise-cottage {
+  position: absolute;
+  left: 50%;
+  bottom: 118px;
+  width: 160px;
+  height: 140px;
+  transform: translateX(-50%);
+}
+
+.promise-roof {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 145px;
+  height: 76px;
+  background: #7b5138;
+  clip-path: polygon(50% 0, 100% 72%, 0 72%);
+}
+
+.promise-house {
+  position: absolute;
+  left: 28px;
+  bottom: 0;
+  width: 105px;
+  height: 82px;
+  border-radius: 12px 12px 4px 4px;
+  background: #fffaf4;
+}
+
+.promise-door {
+  position: absolute;
+  left: 65px;
+  bottom: 0;
+  width: 30px;
+  height: 48px;
+  border-radius: 16px 16px 0 0;
+  background: #6b5848;
+}
+
+.promise-flowers {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 64px;
+  text-align: center;
+  color: #fff6d8;
+  font-size: 1.8rem;
+  letter-spacing: 0.28em;
+}
+
+@media (max-width: 960px) {
+  .promise-wrap {
+    grid-template-columns: 1fr;
+    padding: 26px;
+    border-radius: 38px;
+  }
+
+  .promise-art {
+    height: 360px;
+  }
+}
