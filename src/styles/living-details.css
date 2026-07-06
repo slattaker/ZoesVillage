@@ -1,0 +1,146 @@
+.living-details {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bird {
+  position: absolute;
+  width: 34px;
+  height: 18px;
+  opacity: 0;
+  animation: birdFly 28s linear infinite;
+}
+
+.bird::before,
+.bird::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  width: 18px;
+  height: 10px;
+  border-top: 2px solid rgba(63, 50, 41, 0.35);
+  border-radius: 50%;
+}
+
+.bird::before {
+  left: 0;
+  transform: rotate(-18deg);
+}
+
+.bird::after {
+  right: 0;
+  transform: rotate(18deg);
+}
+
+.bird-one {
+  top: 18%;
+  left: -80px;
+}
+
+.bird-two {
+  top: 31%;
+  left: -120px;
+  transform: scale(0.72);
+  animation-delay: 13s;
+  animation-duration: 34s;
+}
+
+.leaf {
+  position: absolute;
+  color: rgba(102, 116, 88, 0.18);
+  font-size: 2.2rem;
+  animation: leafDrift 18s ease-in-out infinite;
+}
+
+.leaf-one {
+  top: 28%;
+  left: 7%;
+}
+
+.leaf-two {
+  top: 54%;
+  right: 8%;
+  animation-delay: 4s;
+}
+
+.leaf-three {
+  top: 76%;
+  left: 16%;
+  animation-delay: 8s;
+}
+
+.light-orb {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 231, 168, 0.62);
+  box-shadow: 0 0 26px rgba(228, 177, 90, 0.58);
+  animation: orbFloat 9s ease-in-out infinite;
+}
+
+.orb-one {
+  top: 22%;
+  right: 22%;
+}
+
+.orb-two {
+  top: 62%;
+  right: 14%;
+  animation-delay: 2s;
+}
+
+.orb-three {
+  top: 69%;
+  left: 9%;
+  animation-delay: 4s;
+}
+
+@keyframes birdFly {
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(0) scale(1);
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateX(55vw) translateY(-18px) scale(1);
+  }
+
+  92% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(calc(100vw + 160px)) translateY(6px) scale(1);
+  }
+}
+
+@keyframes leafDrift {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-26px) rotate(10deg);
+  }
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    opacity: 0.25;
+    transform: translateY(0) scale(0.8);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: translateY(-22px) scale(1.15);
+  }
+}

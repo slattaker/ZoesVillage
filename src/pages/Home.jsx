@@ -8,11 +8,17 @@ import TestimonialArea from "../components/TestimonialArea.jsx";
 import JourneyTimeline from "../components/JourneyTimeline.jsx";
 import VillagePromise from "../components/VillagePromise.jsx";
 import Footer from "../components/Footer.jsx";
+import VillageIntro from "../components/VillageIntro.jsx";
+import useReveal from "../hooks/useReveal.js";
+import LivingDetails from "../components/LivingDetails.jsx";
 
 function Home() {
+  useReveal();
   return (
     <>
+      <VillageIntro />
       <VillageLandscape />
+      <LivingDetails />
       <Navbar />
       <main>
         <Hero />

@@ -1,12 +1,36 @@
+import { useEffect, useState } from "react";
+import horizontalLogo from "../assets/zoes-village-horizontal-logo.png";
+import iconLogo from "../assets/zoes-village-icon.png";
+
 function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 90);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="navbar">
+    <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <a className="nav-logo" href="#">
-        <span className="nav-logo-mark">ZV</span>
-        <span>
-          <strong>Zoë's Village</strong>
-          <small>Birth & Postpartum Doula</small>
-        </span>
+        <img
+          src={horizontalLogo}
+          alt="Zoë's Village"
+          className="nav-logo-full"
+        />
+
+        <img
+          src={iconLogo}
+          alt="Zoë's Village"
+          className="nav-logo-icon"
+        />
       </a>
 
       <nav className="nav-links">

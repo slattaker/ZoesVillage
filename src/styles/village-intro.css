@@ -1,0 +1,278 @@
+.village-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #fffaf4;
+  animation: introExit 4.2s ease forwards;
+}
+
+.intro-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 229, 164, 0.86), transparent 24%),
+    linear-gradient(180deg, #fffaf4 0%, #f7efe3 54%, #efd8bc 100%);
+  opacity: 0;
+  animation: introSkyIn 1.4s ease forwards;
+}
+
+.intro-sun {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  width: 150px;
+  height: 75px;
+  transform: translate(-50%, 90px);
+  border-radius: 150px 150px 0 0;
+  background: radial-gradient(circle at 50% 70%, #ffe5a3, var(--gold));
+  box-shadow: 0 0 80px rgba(228, 177, 90, 0.48);
+  opacity: 0;
+  animation: introSunRise 2.3s ease forwards;
+}
+
+.sun-ray {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  width: 2px;
+  height: 82px;
+  background: rgba(228, 177, 90, 0.72);
+  transform-origin: bottom center;
+  opacity: 0;
+  animation: introRayDraw 1.5s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.ray-1 {
+  transform: translateX(-50%) rotate(-58deg);
+}
+
+.ray-2 {
+  transform: translateX(-50%) rotate(-30deg);
+}
+
+.ray-3 {
+  transform: translateX(-50%) rotate(0deg);
+}
+
+.ray-4 {
+  transform: translateX(-50%) rotate(30deg);
+}
+
+.ray-5 {
+  transform: translateX(-50%) rotate(58deg);
+}
+
+.intro-hill {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -220px;
+  height: 390px;
+  border-radius: 50% 50% 0 0;
+  opacity: 0;
+  animation: introHillIn 1.9s ease forwards;
+  animation-delay: 0.55s;
+}
+
+.intro-hill-one {
+  background: rgba(138, 151, 116, 0.48);
+  transform: rotate(-3deg);
+}
+
+.intro-hill-two {
+  bottom: -285px;
+  background: rgba(102, 116, 88, 0.44);
+  transform: rotate(4deg);
+  animation-delay: 0.75s;
+}
+
+.intro-path {
+  position: absolute;
+  left: 50%;
+  bottom: -120px;
+  width: 180px;
+  height: 480px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    rgba(239, 216, 188, 0),
+    rgba(239, 216, 188, 0.64),
+    rgba(204, 169, 123, 0.36)
+  );
+  clip-path: polygon(44% 0, 56% 0, 100% 100%, 0 100%);
+  opacity: 0;
+  animation: introPathIn 1.7s ease forwards;
+  animation-delay: 1.05s;
+}
+
+.intro-flowers {
+  position: absolute;
+  left: 50%;
+  bottom: 110px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 32px;
+  color: rgba(102, 116, 88, 0.55);
+  font-size: 2rem;
+}
+
+.intro-flowers span {
+  opacity: 0;
+  transform: translateY(20px) scale(0.6);
+  animation: introFlowerBloom 0.65s ease forwards;
+}
+
+.intro-flowers span:nth-child(1) {
+  animation-delay: 1.55s;
+}
+
+.intro-flowers span:nth-child(2) {
+  animation-delay: 1.7s;
+}
+
+.intro-flowers span:nth-child(3) {
+  animation-delay: 1.85s;
+}
+
+.intro-flowers span:nth-child(4) {
+  animation-delay: 2s;
+}
+
+.intro-flowers span:nth-child(5) {
+  animation-delay: 2.15s;
+}
+
+.intro-logo {
+  position: relative;
+  z-index: 4;
+  width: min(72vw, 560px);
+  opacity: 0;
+  transform: translateY(42px) scale(0.9);
+  filter: blur(8px);
+  animation: introLogoReveal 1.5s ease forwards;
+  animation-delay: 2.15s;
+}
+
+.intro-fade {
+  position: absolute;
+  inset: 0;
+  background: #fffaf4;
+  opacity: 0;
+  animation: introFinalFade 4.2s ease forwards;
+}
+
+@keyframes introSkyIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes introSunRise {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 120px);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -38px);
+  }
+}
+
+@keyframes introRayDraw {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+
+  to {
+    opacity: 1;
+    height: 82px;
+  }
+}
+
+@keyframes introHillIn {
+  from {
+    opacity: 0;
+    transform: translateY(90px) rotate(-3deg);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes introPathIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes introFlowerBloom {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes introLogoReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes introFinalFade {
+  0%,
+  78% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes introExit {
+  0%,
+  86% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-logo {
+    width: 88vw;
+  }
+
+  .intro-sun {
+    width: 120px;
+    height: 60px;
+  }
+
+  .intro-flowers {
+    gap: 18px;
+    font-size: 1.55rem;
+  }
+}

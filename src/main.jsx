@@ -13,6 +13,8 @@ import "./styles/journey-timeline.css";
 import "./styles/testimonial-area.css";
 import "./styles/village-promise.css";
 import "./styles/footer.css";
+import "./styles/village-intro.css";
+import "./styles/living-details.css";
 import App from "./App.jsx";
 
 

@@ -17,37 +17,36 @@
 }
 
 .nav-logo {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
+  width: 260px;
+  height: 58px;
+  flex-shrink: 0;
 }
 
-.nav-logo-mark {
-  width: 44px;
+.nav-logo-full,
+.nav-logo-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  object-fit: contain;
+  transform: translateY(-50%);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    height 0.35s ease;
+}
+
+.nav-logo-full {
+  height: 54px;
+  opacity: 1;
+}
+
+.nav-logo-icon {
   height: 44px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--sage), var(--deep-sage));
-  color: white;
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.nav-logo strong {
-  display: block;
-  font-family: var(--font-heading);
-  color: var(--dark-brown);
-  font-size: 1.15rem;
-  line-height: 1;
-}
-
-.nav-logo small {
-  display: block;
-  font-size: 0.72rem;
-  color: rgba(107, 88, 72, 0.7);
-  margin-top: 3px;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.7);
 }
 
 .nav-links {
@@ -80,7 +79,7 @@
 @media (max-width: 860px) {
   .navbar {
     border-radius: 28px;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .nav-links {
@@ -90,5 +89,58 @@
   .nav-cta {
     padding: 12px 14px;
     font-size: 0.82rem;
+  }
+}
+
+.navbar {
+  transition:
+    width 0.35s ease,
+    padding 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    border-radius 0.35s ease;
+}
+
+.navbar-scrolled {
+  width: min(calc(100% - 32px), 940px);
+  padding: 8px 12px;
+  background: rgba(255, 250, 244, 0.9);
+  box-shadow: 0 16px 44px rgba(63, 50, 41, 0.12);
+}
+
+.navbar-scrolled .nav-logo {
+  width: 54px;
+}
+
+.navbar-scrolled .nav-logo-full {
+  opacity: 0;
+  transform: translateY(-50%) translateX(-10px) scale(0.84);
+}
+
+.navbar-scrolled .nav-logo-icon {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.navbar-scrolled .nav-cta {
+  padding: 11px 15px;
+  font-size: 0.84rem;
+}
+
+@media (max-width: 720px) {
+  .nav-logo {
+    width: 190px;
+  }
+
+  .nav-logo-full {
+    height: 44px;
+  }
+
+  .nav-logo-icon {
+    height: 40px;
+  }
+
+  .navbar-scrolled .nav-logo {
+    width: 46px;
   }
 }
