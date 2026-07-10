@@ -90,9 +90,17 @@ const postpartumPackages = [
    ],
  },
 ];
+
+
 function PackageCards() {
  return (
+    
 <section className="section packages" id="packages">
+<div className="container package-divider">
+<span></span>
+<h3>Postpartum Packages</h3>
+<span></span>
+</div>
 <div className="container postpartum-package-grid">
  {postpartumPackages.map((carePackage) => (
 <article className="postpartum-package-card" key={carePackage.name}>
@@ -124,32 +132,6 @@ function PackageCards() {
 </article>
  ))}
 </div>
-<div className="container package-divider">
-<span></span>
-<h3>Postpartum Packages</h3>
-<span></span>
-</div>
-<div className="container postpartum-package-grid">
-       {postpartumPackages.map((carePackage) => (
-<article className="postpartum-package-card" key={carePackage.name}>
-           {carePackage.badge && (
-<span className="package-badge">{carePackage.badge}</span>
-           )}
-<p className="package-hours">{carePackage.hours}</p>
-<h3>{carePackage.name}</h3>
-<p className="package-price">{carePackage.price}</p>
-<p className="package-description">{carePackage.description}</p>
-<a
-             className="primary-btn"
-             href={BOOKING_URL}
-             target="_blank"
-             rel="noopener noreferrer"
->
-             Schedule a Consultation
-</a>
-</article>
-       ))}
-</div>
 <div className="container package-footer-note">
 <div>
 <p className="eyebrow">Every Family Receives</p>
@@ -168,7 +150,6 @@ function PackageCards() {
 <li>Twins and multiples</li>
 <li>Premature babies and NICU graduates</li>
 <li>Overnight newborn care</li>
-<li>Feeding and soothing support</li>
 </ul>
 </div>
 </div>
