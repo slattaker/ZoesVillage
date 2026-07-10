@@ -23,6 +23,7 @@ function Hero() {
   return (
     <section
       className="hero"
+      id="home"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -40,14 +41,13 @@ function Hero() {
       <div className="hero-flower flower-three">✧</div>
 
 <div className="hero-content reveal">
-  <p className="eyebrow">Charlotte Birth & Postpartum Doula</p>
+  <p className="eyebrow">Charlotte Postpartum Doula & Newborn Care</p>
 
   <h1>Every family deserves a village.</h1>
 
   <p>
-    Thoughtful birth and postpartum care that helps you feel calm,
-    informed, and supported — from pregnancy through your first days at
-    home.
+    Gentle postpartum and newborn care that helps your family rest, recover,
+    and feel supported during the first weeks at home.
   </p>
 
         <div className="hero-actions">
@@ -76,8 +76,8 @@ function Hero() {
         <div className="hero-badge">
           <span>★★★★★</span>
           <h4>
-            Trusted Birth &<br />
-            Postpartum Care
+            Trusted Postpartum &<br />
+            Newborn Care
           </h4>
           <p>Charlotte • Fort Mill • Surrounding Areas</p>
         </div>

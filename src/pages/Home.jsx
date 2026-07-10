@@ -11,6 +11,7 @@ import Footer from "../components/Footer.jsx";
 import VillageIntro from "../components/VillageIntro.jsx";
 import useReveal from "../hooks/useReveal.js";
 import LivingDetails from "../components/LivingDetails.jsx";
+import PackageCards from "../components/PackageCards.jsx";
 
 function Home() {
   useReveal();
@@ -26,6 +27,7 @@ function Home() {
         <ServicesPreview />
         <WhyChoose />
         <JourneyTimeline />
+        <PackageCards />
         <TestimonialArea />
         <VillagePromise />
         <Footer />

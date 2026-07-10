@@ -1,52 +1,56 @@
+const BOOKING_URL =
+ "https://calendar.app.google/nXVsKwuQUBeXJyis8";
 function Footer() {
-  return (
-    <footer className="footer">
-      <div className="container footer-grid">
-        <div>
-          <a className="footer-brand" href="#">
-            <span>ZV</span>
-            <div>
-              <strong>Zoë's Village</strong>
-              <p>Birth & Postpartum Doula Care</p>
-            </div>
-          </a>
-
-          <p className="footer-copy">
-            Gentle support for pregnancy, birth, postpartum, and the beautiful
-            beginning of your family’s story.
-          </p>
-        </div>
-
-        <div className="footer-links">
-          <h3>Explore</h3>
-          <a href="#about">About Zoë</a>
-          <a href="#services">Services</a>
-          <a href="#journey">Your Journey</a>
-          <a href="#contact">Consultation</a>
-        </div>
-
-        <div className="footer-links">
-          <h3>Service Area</h3>
-          <p>Charlotte</p>
-          <p>Fort Mill</p>
-          <p>Rock Hill</p>
-          <p>Tega Cay</p>
-        </div>
-
-        <div className="footer-links">
-          <h3>Connect</h3>
-          <a href="mailto:hello@zoesvillage.com">hello@zoesvillage.com</a>
-          <a href="tel:+10000000000">Call or Text</a>
-          <a href="#journal">Village Journal</a>
-        </div>
-      </div>
-
-      <div className="container footer-bottom">
-        <p>© {new Date().getFullYear()} Zoë's Village. All rights reserved.</p>
-        <p>Serving families across the Charlotte area.</p>
-      </div>
-    </footer>
-  );
+ return (
+<footer className="site-footer" id="contact">
+<div className="container footer-contact">
+<div>
+<p className="eyebrow">Contact Zoë</p>
+<h2>Questions? I’d love to hear from you.</h2>
+<p>
+           Reach out about postpartum support, newborn care, availability,
+           or scheduling a consultation.
+</p>
+</div>
+<div className="footer-contact-details">
+<a href="tel:+18036103007">
+<span>Call or text</span>
+<strong>(803) 610-3007</strong>
+</a>
+<a href="mailto:hello@zoesvillage.com">
+<span>Email</span>
+<strong>hello@zoesvillage.com</strong>
+</a>
+<div>
+<span>Serving</span>
+<strong>
+             Charlotte, Fort Mill, Rock Hill, Tega Cay, Waxhaw, Matthews,
+             and surrounding communities
+</strong>
+</div>
+</div>
+</div>
+<div className="container footer-actions">
+<a
+         className="primary-btn"
+         href={BOOKING_URL}
+         target="_blank"
+         rel="noopener noreferrer"
+>
+         Schedule a Free Consultation
+</a>
+</div>
+<div className="container footer-bottom">
+<nav aria-label="Footer navigation">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#packages">Packages</a>
+<a href="#journey">Journey</a>
+</nav>
+<p>© {new Date().getFullYear()} Zoë’s Village LLC</p>
+</div>
+</footer>
+ );
 }
-
 export default Footer;

@@ -1,17 +1,15 @@
+import promiseImage from "../assets/promise-baby-hands.png";
+
 function VillagePromise() {
   return (
     <section className="section village-promise" id="contact">
       <div className="container promise-wrap">
         <div className="promise-art">
-          <div className="promise-sun"></div>
-          <div className="promise-hill promise-hill-one"></div>
-          <div className="promise-hill promise-hill-two"></div>
-          <div className="promise-cottage">
-            <div className="promise-roof"></div>
-            <div className="promise-house"></div>
-            <div className="promise-door"></div>
-          </div>
-          <div className="promise-flowers">✿ ✿ ✿ ✿ ✿ ✿</div>
+          <img
+            src={promiseImage}
+            alt="A newborn gently holding a caregiver's finger"
+            className="promise-image"
+          />
         </div>
 
         <div className="promise-content">
@@ -22,25 +20,22 @@ function VillagePromise() {
           </h2>
 
           <p>
-            Whether you are preparing for your first birth, healing after
-            delivery, or simply needing steady support in a brand-new season,
-            Zoë’s Village is here to walk beside you.
+            The early weeks with a newborn can be beautiful, exhausting, tender, and
+            overwhelming all at once. Zoë’s Village is here to offer practical help,
+            gentle guidance, and a calm presence while your family rests, recovers, and
+            finds its new rhythm.
           </p>
 
           <div className="promise-actions">
-            <a className="primary-btn" href="https://calendar.app.google/nXVsKwuQUBeXJyis8">
-              Schedule a Free Consultation
-            </a>
-
-            <a className="secondary-btn" href="tel:">
-              Call or Text
-            </a>
+          <a
+            className="primary-btn"
+            href="https://calendar.app.google/nXVsKwuQUBeXJyis8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Schedule a Free Consultation
+          </a>
           </div>
-
-          <p className="promise-small">
-            Serving Charlotte, Fort Mill, Rock Hill, Tega Cay, Waxhaw, Matthews,
-            and nearby communities.
-          </p>
         </div>
       </div>
     </section>

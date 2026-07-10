@@ -34,16 +34,20 @@ function AboutPreview() {
       </h2>
 
       <p className="section-copy">
-        Hi, I'm Zoë...
+         Hi! I’m Zoë. I believe the postpartum season was never meant to be walked
+        through alone. My heart is to help families feel rested, reassured, and
+        supported as they recover, bond with their baby, and settle into life at home.
       </p>
 
       <p className="section-copy">
-        Whether you are preparing...
+         Whether you need an extra set of hands, newborn guidance, emotional support,
+          or time to rest, Zoë’s Village offers steady care with warmth, patience, and
+          respect for your family’s needs.
       </p>
 
       <div className="about-signature">
         <span>Zoë</span>
-        <p>Birth & Postpartum Doula</p>
+        <p>Postpartum Doula & Newborn Care Provider</p>
       </div>
 
       <a className="secondary-btn" href="#services">

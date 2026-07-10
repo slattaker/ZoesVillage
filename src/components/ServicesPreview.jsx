@@ -1,19 +1,19 @@
 const services = [
-  {
-    icon: "🌿",
-    title: "Birth Support",
-    text: "Steady encouragement, comfort measures, advocacy support, and calm guidance before and during labor.",
-  },
-  {
-    icon: "🕯️",
-    title: "Postpartum Care",
-    text: "Gentle in-home support as your family recovers, rests, feeds, heals, and finds a new rhythm.",
-  },
-  {
-    icon: "🌸",
-    title: "Virtual Guidance",
-    text: "Flexible support for birth planning, postpartum questions, emotional encouragement, and preparation.",
-  },
+ {
+   icon: "🌿",
+   title: "Postpartum Support",
+   text: "Compassionate in-home care that gives you space to rest, recover, and adjust to life with your baby.",
+ },
+ {
+   icon: "🌸",
+   title: "Newborn Care",
+   text: "Gentle guidance with feeding, soothing, diapering, sleep rhythms, and everyday newborn care.",
+ },
+ {
+   icon: "🕯️",
+   title: "Overnight Support",
+   text: "Calm nighttime care that helps your family get more rest while your baby is safely supported.",
+ },
 ];
 
 function ServicesPreview() {
@@ -36,7 +36,7 @@ function ServicesPreview() {
               <div className="service-icon">{service.icon}</div>
               <h3>{service.title}</h3>
               <p>{service.text}</p>
-              <a href="#contact">Start here →</a>
+              <a href="#packages">Start here →</a>
             </article>
           ))}
         </div>

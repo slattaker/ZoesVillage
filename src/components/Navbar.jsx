@@ -33,16 +33,22 @@ function Navbar() {
         />
       </a>
 
-      <nav className="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#journey">Your Journey</a>
-        <a href="#journal">Journal</a>
-      </nav>
-
-      <a className="nav-cta" href="#contact">
-        Free Consultation
-      </a>
+            <nav className="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#packages">Packages</a>
+            <a href="#journey">Journey</a>
+            <a href="#contact">Contact</a>
+            </nav>      
+          <a
+            className="nav-cta"
+            href="https://calendar.app.google/nXVsKwuQUBeXJyis8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Free Consultation
+          </a>
     </header>
   );
 }

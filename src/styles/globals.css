@@ -40,6 +40,11 @@ a {
   padding: 110px 24px;
 }
 
+section,
+footer {
+ scroll-margin-top: 120px;
+}
+
 .container {
   width: min(100%, var(--container));
   margin: 0 auto;
