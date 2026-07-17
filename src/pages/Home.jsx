@@ -72,7 +72,7 @@ function Home() {
         <AboutPreview />
         <ServicesPreview />
         <PainPoints />
-        <WhyChoose />
+        {/* <WhyChoose /> */}
         <JourneyTimeline />
         <PackageCards />
         <ResourcesPreview />
