@@ -50,21 +50,50 @@ function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 90);
-    };
+useEffect(() => {
+  let ticking = false;
 
-    handleScroll();
+  const handleScroll = () => {
+    if (ticking) return;
 
-    window.addEventListener("scroll", handleScroll, {
-      passive: true,
+    ticking = true;
+
+    window.requestAnimationFrame(() => {
+      const currentScroll = window.scrollY;
+
+      setScrolled((currentlyScrolled) => {
+        /*
+         * Shrink only after scrolling past 140px.
+         * Expand only after returning above 60px.
+         *
+         * The space between 60px and 140px prevents
+         * the navbar from rapidly switching states.
+         */
+        if (!currentlyScrolled && currentScroll > 140) {
+          return true;
+        }
+
+        if (currentlyScrolled && currentScroll < 60) {
+          return false;
+        }
+
+        return currentlyScrolled;
+      });
+
+      ticking = false;
     });
+  };
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  handleScroll();
+
+  window.addEventListener("scroll", handleScroll, {
+    passive: true,
+  });
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
 
   useEffect(() => {
     setMenuOpen(false);

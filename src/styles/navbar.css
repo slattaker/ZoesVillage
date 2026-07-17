@@ -35,14 +35,12 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.68);
 
   transition:
-    width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
-    min-height 0.4s ease,
-    padding 0.4s ease,
-    background 0.4s ease,
+    width 0.38s cubic-bezier(0.22, 0.61, 0.36, 1),
+    background-color 0.4s ease,
     border-color 0.4s ease,
-    border-radius 0.4s ease,
     box-shadow 0.4s ease,
-    backdrop-filter 0.4s ease;
+    backdrop-filter 0.4s ease,
+    -webkit-backdrop-filter 0.4s ease;
 }
 
 /* ======================================================
@@ -137,8 +135,7 @@
   white-space: nowrap;
 
   transition:
-    color 0.22s ease,
-    transform 0.22s ease;
+    color 0.22s ease;
 }
 
 .site-nav-links a::after {
@@ -162,8 +159,6 @@
 
 .site-nav-links a:hover {
   color: var(--deep-sage);
-
-  transform: translateY(-1px);
 }
 
 .site-nav-links a:hover::after,
@@ -226,29 +221,53 @@
 }
 
 /* ======================================================
-   SCROLLED DESKTOP NAVIGATION
+   SCROLLED DESKTOP NAVIGATION — TRANSPARENT GLASS
    ====================================================== */
 
 .site-navbar-scrolled {
   width: min(calc(100% - 32px), 960px);
-  min-height: 68px;
-  padding: 7px 11px;
 
-  border-color: rgba(107, 88, 72, 0.15);
+  /*
+   * Keep these dimensions the same as the full navbar.
+   * This prevents the page position from shifting and
+   * causing the navbar to flicker between sizes.
+   */
+  min-height: 82px;
+  padding: 11px 14px;
 
-  background: rgba(255, 250, 244, 0.94);
+  border-color: rgba(255, 255, 255, 0.34);
+
+  /*
+   * Very transparent while scrolling.
+   * The scenery and sunlight will show through.
+   */
+background: rgba(255, 250, 244, 0.12);
 
   backdrop-filter:
-    blur(28px)
-    saturate(1.2);
+    blur(30px)
+    saturate(1.45);
 
   -webkit-backdrop-filter:
-    blur(28px)
-    saturate(1.2);
+    blur(30px)
+    saturate(1.45);
 
   box-shadow:
-    0 18px 48px rgba(63, 50, 41, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.76);
+    0 16px 44px rgba(63, 50, 41, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.site-navbar-scrolled .site-nav-links {
+  color: rgba(63, 50, 41, 0.86);
+}
+
+.site-navbar-scrolled .site-nav-links a {
+  text-shadow:
+    0 1px 12px rgba(255, 250, 244, 0.8);
+}
+
+.site-navbar-scrolled .site-nav-logo-icon {
+  filter:
+    drop-shadow(0 5px 12px rgba(63, 50, 41, 0.12));
 }
 
 .site-navbar-scrolled .site-nav-logo {
@@ -321,7 +340,7 @@
    TABLET AND MOBILE
    ====================================================== */
 
-@media (max-width: 860px) {
+@media (max-width: 1100px) {
   .site-navbar,
   .site-navbar-scrolled {
     top: 10px;
@@ -750,5 +769,398 @@
     animation: none !important;
 
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ======================================================
+   RESPONSIVE NAVBAR WIDTH FIX
+   Keep at the absolute bottom of navbar.css
+   ====================================================== */
+
+/*
+ * At laptop and half-screen widths, use the compact
+ * navigation instead of squeezing all desktop links.
+ */
+@media (max-width: 1100px) {
+  .site-navbar,
+  .site-navbar-scrolled {
+    top: 10px;
+
+    width: calc(100% - 24px);
+    min-height: 72px;
+
+    margin: 10px auto 0;
+    padding: 9px 11px 9px 16px;
+
+    gap: 12px;
+    border-radius: 30px;
+  }
+
+  .site-nav-links {
+    display: none !important;
+  }
+
+  .site-nav-logo,
+  .site-navbar-scrolled .site-nav-logo {
+    width: 190px;
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  .site-nav-logo-full,
+  .site-navbar-scrolled .site-nav-logo-full {
+    width: 185px;
+    height: 46px;
+
+    opacity: 1;
+    visibility: visible;
+
+    filter: none;
+
+    transform:
+      translateY(-50%)
+      translateX(0)
+      scale(1);
+  }
+
+  .site-nav-logo-icon,
+  .site-navbar-scrolled .site-nav-logo-icon {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .site-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-left: auto;
+  }
+
+  /*
+   * Keep the consultation button visible on tablets
+   * and half-screen desktop windows.
+   */
+  .site-nav-cta,
+  .site-navbar-scrolled .site-nav-cta {
+    display: inline-flex;
+
+    min-height: 48px;
+    padding: 12px 18px;
+
+    font-size: 0.82rem;
+  }
+
+  .site-menu-toggle {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    width: 48px;
+    height: 48px;
+    padding: 0;
+
+    flex: 0 0 48px;
+
+    border: 1px solid rgba(107, 88, 72, 0.13);
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, 0.82);
+    color: var(--dark-brown);
+
+    box-shadow:
+      0 10px 24px rgba(63, 50, 41, 0.09),
+      inset 0 1px 0 rgba(255, 255, 255, 0.78);
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    cursor: pointer;
+  }
+
+  .site-menu-line {
+    position: absolute;
+    left: 50%;
+
+    display: block;
+
+    width: 21px;
+    height: 2px;
+
+    border-radius: 999px;
+    background: currentColor;
+
+    transform-origin: center;
+
+    transition:
+      transform 0.28s ease,
+      opacity 0.22s ease,
+      width 0.22s ease;
+  }
+
+  .site-menu-line-one {
+    transform:
+      translateX(-50%)
+      translateY(-6px);
+  }
+
+  .site-menu-line-two {
+    transform: translateX(-50%);
+  }
+
+  .site-menu-line-three {
+    transform:
+      translateX(-50%)
+      translateY(6px);
+  }
+
+  .site-menu-toggle-open .site-menu-line-one {
+    transform:
+      translateX(-50%)
+      rotate(45deg);
+  }
+
+  .site-menu-toggle-open .site-menu-line-two {
+    width: 0;
+    opacity: 0;
+  }
+
+  .site-menu-toggle-open .site-menu-line-three {
+    transform:
+      translateX(-50%)
+      rotate(-45deg);
+  }
+
+  /*
+   * Dropdown menu
+   */
+  .site-mobile-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    z-index: 1100;
+
+    padding: 16px;
+
+    border: 1px solid rgba(107, 88, 72, 0.12);
+    border-radius: 30px;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 250, 244, 0.995),
+        rgba(247, 241, 233, 0.985)
+      );
+
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    box-shadow:
+      0 30px 80px rgba(63, 50, 41, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.84);
+  }
+
+  .site-mobile-menu nav {
+    display: grid;
+  }
+
+  .site-mobile-menu nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    padding: 16px 15px;
+
+    border-bottom: 1px solid rgba(107, 88, 72, 0.09);
+
+    color: var(--dark-brown);
+
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .site-mobile-menu nav a:last-child {
+    border-bottom: 0;
+  }
+
+  .site-mobile-menu-number {
+    color: rgba(107, 88, 72, 0.38);
+
+    font-family: var(--font-body);
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  .site-mobile-menu-footer {
+    display: grid;
+    gap: 14px;
+
+    margin-top: 14px;
+    padding: 16px;
+
+    border-radius: 20px;
+    background: rgba(138, 151, 116, 0.1);
+  }
+
+  .site-mobile-availability {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .site-mobile-availability p {
+    margin: 0;
+
+    color: var(--deep-sage);
+
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .site-availability-dot {
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background: var(--sage);
+
+    box-shadow:
+      0 0 0 5px rgba(138, 151, 116, 0.14);
+  }
+
+  .site-mobile-menu-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    min-height: 54px;
+    padding: 14px 17px;
+
+    border-radius: 999px;
+
+    background:
+      linear-gradient(
+        135deg,
+        var(--gold),
+        #c98d34
+      );
+
+    color: white;
+
+    font-size: 0.84rem;
+    font-weight: 800;
+
+    box-shadow:
+      0 14px 30px rgba(201, 141, 52, 0.25);
+  }
+
+  .site-mobile-location {
+    margin: 0;
+
+    color: rgba(107, 88, 72, 0.62);
+
+    font-size: 0.7rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+/* ======================================================
+   PHONE NAVBAR
+   ====================================================== */
+
+@media (max-width: 700px) {
+  .site-navbar,
+  .site-navbar-scrolled {
+    width: calc(100% - 20px);
+    min-height: 68px;
+
+    padding: 8px 9px 8px 13px;
+    border-radius: 27px;
+  }
+
+  .site-nav-logo,
+  .site-navbar-scrolled .site-nav-logo {
+    width: 148px;
+    height: 47px;
+  }
+
+  .site-nav-logo-full,
+  .site-navbar-scrolled .site-nav-logo-full {
+    width: 143px;
+    height: 43px;
+  }
+
+  /*
+   * On phones, move consultation into the menu
+   * so the top bar stays uncluttered.
+   */
+  .site-nav-cta,
+  .site-navbar-scrolled .site-nav-cta {
+    display: none !important;
+  }
+
+  .site-menu-toggle {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+}
+
+/* ======================================================
+   SMALL PHONES
+   ====================================================== */
+
+@media (max-width: 390px) {
+  .site-nav-logo,
+  .site-navbar-scrolled .site-nav-logo {
+    width: 130px;
+  }
+
+  .site-nav-logo-full,
+  .site-navbar-scrolled .site-nav-logo-full {
+    width: 126px;
+  }
+
+  .site-menu-toggle {
+    width: 45px;
+    height: 45px;
+    flex-basis: 45px;
+
+    border-radius: 16px;
+  }
+}
+
+/* ======================================================
+   TRANSPARENT SCROLLED NAVBAR — TABLET AND MOBILE
+   Keep at the absolute bottom of navbar.css
+   ====================================================== */
+
+@media (max-width: 1100px) {
+  .site-navbar-scrolled {
+    background: rgba(255, 250, 244, 0.2);
+
+    border-color: rgba(255, 255, 255, 0.38);
+
+    backdrop-filter:
+      blur(30px)
+      saturate(1.45);
+
+    -webkit-backdrop-filter:
+      blur(30px)
+      saturate(1.45);
+
+    box-shadow:
+      0 14px 38px rgba(63, 50, 41, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.55);
   }
 }
